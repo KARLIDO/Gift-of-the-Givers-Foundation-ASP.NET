@@ -1,0 +1,60 @@
+﻿@page
+@model Gift_of_the_Givers_Foundation.Pages.Donations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Donation[0].ResourceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donation[0].ResourceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donation[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donation[0].DonorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donation[0].DonorContact)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Donation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResourceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResourceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorContact)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

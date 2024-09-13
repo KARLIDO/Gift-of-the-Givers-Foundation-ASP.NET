@@ -1,0 +1,48 @@
+﻿@page
+@model Gift_of_the_Givers_Foundation.Pages.TaskAssignment.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskAssignment[0].VolunteerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskAssignment[0].TaskName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskAssignment[0].AssignedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TaskAssignment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunteerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

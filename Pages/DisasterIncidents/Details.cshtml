@@ -1,0 +1,49 @@
+﻿@page
+@model Gift_of_the_Givers_Foundation.Pages.DisasterIncidents.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DisasterIncident</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.IncidentType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.IncidentType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Severity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Severity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DisasterIncident.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

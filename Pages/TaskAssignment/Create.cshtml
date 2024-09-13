@@ -1,0 +1,44 @@
+﻿@page
+@model Gift_of_the_Givers_Foundation.Pages.TaskAssignment.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TaskAssignment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TaskAssignment.VolunteerId" class="control-label"></label>
+                <input asp-for="TaskAssignment.VolunteerId" class="form-control" />
+                <span asp-validation-for="TaskAssignment.VolunteerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskAssignment.TaskName" class="control-label"></label>
+                <input asp-for="TaskAssignment.TaskName" class="form-control" />
+                <span asp-validation-for="TaskAssignment.TaskName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskAssignment.AssignedDate" class="control-label"></label>
+                <input asp-for="TaskAssignment.AssignedDate" class="form-control" />
+                <span asp-validation-for="TaskAssignment.AssignedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

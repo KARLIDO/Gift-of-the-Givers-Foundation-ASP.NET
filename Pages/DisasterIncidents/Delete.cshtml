@@ -1,0 +1,52 @@
+﻿@page
+@model Gift_of_the_Givers_Foundation.Pages.DisasterIncidents.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DisasterIncident</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.IncidentType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.IncidentType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Severity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Severity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DisasterIncident.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DisasterIncident.Description)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="DisasterIncident.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+﻿@page
+@model Gift_of_the_Givers_Foundation.Pages.Volunteers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Volunteer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Volunteer.Id" />
+            <div class="form-group">
+                <label asp-for="Volunteer.Name" class="control-label"></label>
+                <input asp-for="Volunteer.Name" class="form-control" />
+                <span asp-validation-for="Volunteer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Volunteer.Skills" class="control-label"></label>
+                <input asp-for="Volunteer.Skills" class="form-control" />
+                <span asp-validation-for="Volunteer.Skills" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Volunteer.Availability" class="control-label"></label>
+                <input asp-for="Volunteer.Availability" class="form-control" />
+                <span asp-validation-for="Volunteer.Availability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Volunteer.ExperienceLevel" class="control-label"></label>
+                <input asp-for="Volunteer.ExperienceLevel" class="form-control" />
+                <span asp-validation-for="Volunteer.ExperienceLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
