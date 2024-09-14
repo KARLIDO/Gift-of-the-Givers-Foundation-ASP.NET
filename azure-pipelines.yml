@@ -6,7 +6,7 @@
 trigger:
 - none
 
-pool: GGF
+pool:
   vmImage: 'windows-latest'
 
 variables:
